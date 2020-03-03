@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TestApp
+//  Test
 //
-//  Created by Apple on 29/02/20.
+//  Created by Apple on 28/02/20.
 //  Copyright © 2020 Pratik Patil. All rights reserved.
 //
 
@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let url = FileManager.default.documentDirectoryUrl()?.appendingPathComponent("Images") {
+            print("Image folder: \(url)")
+            FileManager.default.createDirectory(url: url)
+        }
         return true
     }
 
